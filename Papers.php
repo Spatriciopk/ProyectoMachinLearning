@@ -17,22 +17,20 @@
     </py-env>
     <py-script>
         
-        #import pandas as pd
-        #from pandas import *
-        from importacion import importacion_columnas
+        import pandas as pd
         from pyodide import create_proxy
+        from pyodide.http import open_url
         def HTML(text):
             return text.replace("{{", "<").replace("}}", ">")
         
         num = document.getElementById("papernumber")
         tam = 0
-        
-      
-
-        
-
-        
-        
+        def importacion_columnas(columna):
+            url = "https://raw.githubusercontent.com/Freddy8-C/Proyecto_MachineLearning/master/csv/Proyecto.csv"
+            data = pd.read_csv(open_url(url))
+            columna = data[columna].tolist()
+            return columna
+  
         titulos=""
         keyword=""
         abstract=""
@@ -48,11 +46,8 @@
         #if(valor_lista[2]=='3'):
         abstract = importacion_columnas("Abstract")
        
-        
         categoria = Element('iden').value
         
-       
-       
         tam = len(abstract)
         if( categoria == '1'):
             abstract = importacion_columnas("Abstract")
