@@ -6,7 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
     <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-    <title>Papers</title>
+
+    <!-- LIBRERÍA BOOSTRAP -->
+    
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"> 
+
+<!-- Estilos -->
+<link rel="stylesheet" href="css/Estilos.css">
+
+<title>Papers</title>
 </head>
 <body>
     <py-env>
@@ -75,10 +88,10 @@
             keyword = keyword[144:192]
             tam = len(abstract)
        
-        tabla = "{{table }}{{tr}}{{td }} ID {{/td}}{{td class='tit'}} Titles {{/td}} {{td class='key'}} KeyWords {{/td}} {{td class='asb'}} Abstract {{/td}}{{/tr}}"
+        tabla = "{{div class='table-responsive'}}  {{table class='table'}} {{thead}}  {{tr}}{{th }} ID {{/th}}{{th class='tit'}} Titles {{/th}} {{th class='key'}} Keywords {{/th}} {{th class='asb'}} Abstract {{/th}}{{/tr}} {{/thead}}"
         for i in range(0,len(abstract)):
-            tabla += "{{tr}}{{td}}"+ str((i+1)) +" {{/td}} {{td class='tit' }}"+str(titulos[i]) +"{{/td}}" + " {{td class='key'}}"+str(keyword[i]) +"{{/td}}" +"{{td class='asb'}}"+str(abstract[i]) +"{{/td}}{{/tr}}"
-        tabla += "{{/table}}"
+            tabla += "{{tr}}{{td}}"+ str((i+1)) +" {{/td}} {{td class='tit' style='width:400px;'}}"+str(titulos[i]) +"{{/td}}" + " {{td class='key'}}"+str(keyword[i]) +"{{/td}}" +"{{td class='asb'}}  {{div style='height:100px;overflow:auto;'}}  "+str(abstract[i]) +"{{/div}} {{/td}}{{/tr}}"
+        tabla += "{{/table}} {{/div}}"
         componente_tabla = document.getElementById("salida_tabla")
         componente_tabla.innerHTML = HTML(tabla)
         componente_tabla.innerHTML = HTML(tabla)
@@ -88,57 +101,119 @@
 
        
     </py-script>
+
+    <div class="logo">
+        <img src="img/Logo.png" alt="Logo Machine Learning" />
+    </div>
           
-    <ul>
-            <li>
-                <a href="Papers.php?id=1">All Papers</a>
-                <a href="Papers.php?id=2">Ciencias Sociales</a>
-                <a href="Papers.php?id=3">Computación</a>
-                <a href="Papers.php?id=4">Medicina</a>
-                <a href="Papers.php?id=5">Ciencias Exactas</a>
-                
-            </li>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.php">Index</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Papers
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a class="dropdown-item" href="Papers.php?id=1">All Papers</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="Papers.php?id=2">Social Sciences</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="Papers.php?id=3">Computing</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="Papers.php?id=4">Medicine</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="Papers.php?id=5">Exact Sciences</a></li>
+          </ul>
+        </li>
+            <a class="navbar-brand" href="Dendrogram.php">Dendrogram</a>
+            <a class="navbar-brand" href="MDS.php">MDS</a>
+            <a class="navbar-brand" href="Wordmap.php">Wordmap</a>
+            <a class="navbar-brand" href="Schedule.php">Schedule</a>
     </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <!-- <ul class="nav nav-tabs bg-dark" >
+            <li class="nav-item"><a class="nav-link" href="index.php">Index</a></li>  
+            <li class="nav-item"><a class="nav-link" href="Papers.php">Papers</a></li> 
+            <li><hr class="dropdown-divider"></li>
+
+            <li class="nav-item"><a class="nav-link" href="Dendrogram.php">Dendrogram</a></li>
+            <li class="nav-item"><a class="nav-link" href="MDS.php">MDS</a></li>
+            <li class="nav-item"><a class="nav-link" href="Wordmap.php">Wordmap</a></li>
+            <li class="nav-item"><a class="nav-link" href="Schedule.php">Schedule</a></li>
+
+
+            
+            <li class="nav-item"><a class="nav-link" href="Papers.php?id=1">All Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="Papers.php?id=2">Social Sciences</a></li> 
+            <li class="nav-item"> <a class="nav-link" href="Papers.php?id=3">Computing</a></li>
+            <li class="nav-item"><a class="nav-link" href="Papers.php?id=4">Medicine</a></li>
+            <li class="nav-item"><a class="nav-link" href="Papers.php?id=5">Exact Sciences</a></li>
+    </ul> -->
+
+    <div id="papernumber">  </div>
+
     <?php
                 if( isset($_GET['id'])){
                     $id = $_GET['id'];
                     if( $id == 1){
-                        echo "<div id='busqueda'> <button value='1' id='iden'>Todos</button></div>";
+                        echo "<div id='busqueda'> <button value='1' id='iden'><h1>All Papers</h1></button></div>";
                     }
                     else if( $id == 2){
-                        echo "<div id='busqueda'> <button value='2' id='iden'>Ciencias Sociales </button></div>";
+                        echo "<div id='busqueda'> <button value='2' id='iden'><h1> Social Sciences</h1></button></div>";
                     }
                     else if( $id == 3){
-                        echo "<div id='busqueda'> <button value='3' id='iden'>Computacion</button></div>";
+                        echo "<div id='busqueda'> <button value='3' id='iden'><h1> Computing</h1></button></div>";
                     }
                     else if( $id == 4){
-                        echo "<div id='busqueda'> <button value='4' id='iden'>Medicina </button></div>";
+                        echo "<div id='busqueda'> <button value='4' id='iden'><h1> Medicine</h1> </button></div>";
                     }
                     else if( $id == 5){
-                        echo "<div id='busqueda'> <button value='5' id='iden'>Ciencias exactas </button></div>";
+                        echo "<div id='busqueda'> <button value='5' id='iden'><h1> Exact Sciences</h1></button></div>";
                     }
                    
                 }
                 else{
                     $id =1;
-                    echo "<div id='busqueda'> <button value='1' id='iden'> Todos </button></div>";
+                    echo "<div id='busqueda'> <button value='1' id='iden'> <h1> All Papers </h1> </button></div>";
                 }
               
                 
            
             ?>
-   
+    
     <label><input type="checkbox" checked id="cbox1"> Show Title</label><br>
     <label><input type="checkbox" checked id="cbox2"> Show Keywords</label><br>
     <label><input type="checkbox" checked id="cbox3"> Show Abstract</label><br>
     
   
-    <div id="papernumber">  </div>
+    
     <button id="lista" value="0,0,0">  </button>
     <div id="salida_tabla"> 
        
     </div>
 
     <script src="scripts/check.js"> </script>
+
+    <footer>
+<p>
+Elaborado por: Estudiantes de la Universidad Politécnica Salesiana.
+</p>
+</footer>
+
 </body>
+
+
+
+
 </html>

@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
+
+/* encabezado */
+
+img{ 
+    /* object-fit: scale-down; */ 
+    width: 100vw;
+    height: 250px;
+}
+
+
+/* Menu navegacion */
+/* ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1e1f22;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.nav-link{
+    color: white;
+
+}
+
+.active {
+  background-color: #3f4f53;
+} 
+
+
+.nav>li>a:focus, .nav>li>a:hover {
+  text-decoration: none;
+  background-color: #3f4f53;
+} */
+
+
+
+/* Cantidad de papers */
+#papernumber{
+    background-color: #85898b66;
+    border-radius: 50px;
+    padding-left: 18px;
+    height: 37px; 
+    padding-top: 7px;
+}
+
+
+/* Titulo */
+#busqueda{
+    text-align: center;
+}
+
+#busqueda button{
+ 
+    margin: 0 auto;
+} 
+
+
+
+/* tabla */
+
+ 
+
+
+
+
+html {
+    min-height: 100%;
+    position: relative;
+  }
+  body {
+    margin: 0;
+    margin-bottom: 40px;
+  }
+
+footer {
+    background-color: #212529;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    color: white;
+  }
+
+footer p{
+    text-align: center;
+}
+
+
+ 
+
+ 
+ 
